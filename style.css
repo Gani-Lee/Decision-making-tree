@@ -1,0 +1,42 @@
+#treeContainer {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: #eaf6ea;
+}
+
+#branch {
+  position: absolute;
+  left: 2%;
+  top: 0;
+  bottom: 0;
+  width: 350px;
+  background-image: url("tree.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.leafR {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  background-image: url("leafR.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: top 0.8s ease-in;  /* ⭐ 꼭 필요! */
+}
+
+.leafL {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  background-image: url("leafL.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: top 0.8s ease-in;  /* ⭐ 꼭 필요! */
+}
