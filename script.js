@@ -75,4 +75,6 @@ function createLeaf(isLeft) {
   return leaf;
 }
 
-document.getElementById("startBtn").addEventListener("click", clickStartButton);
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("startBtn").addEventListener("click", clickStartButton);
+});
