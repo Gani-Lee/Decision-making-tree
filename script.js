@@ -34,7 +34,7 @@ function updateDecisionText(text) {
 function popupFinalResult() {
   if(clickCount === leafCountL + leafCountR){
     const finalDecision = document.getElementById("decisionWord").textContent;
-    document.getElementById("modalContent").textContent = finalDecison;
+    document.getElementById("modalContent").textContent = finalDecision;
     document.getElementById("modal").style.display = "block";
   }
 }
