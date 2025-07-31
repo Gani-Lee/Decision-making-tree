@@ -29,7 +29,7 @@ function updateDecisionText(text) {
 
 // 트리 초기화
 function resetTree() {
-  const tree = document.getElementById("tree");
+  const tree = document.getElementById("treeContainer");
   tree.innerHTML = '<div id="branch"></div>';
 }
 
@@ -44,7 +44,7 @@ function generateLeaves() {
 
 // 왼쪽 또는 오른쪽 나뭇잎 여러 개 생성
 function generateLeafSide(isLeft, leafCount) {
-  const tree = document.getElementById("tree");
+  const tree = document.getElementById("treeContainer");
   const usedY = [];
   let currentY = 80;
 
@@ -75,5 +75,4 @@ function createLeaf(isLeft) {
   return leaf;
 }
 
-
-document.getElementById("startBtn").addEventListener("click", clickStartButton());
+document.getElementById("startBtn").addEventListener("click", clickStartButton);
