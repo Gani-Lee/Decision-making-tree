@@ -33,7 +33,7 @@ function updateDecisionText(text) {
 // 최종결과 모달
 function popupFinalResult() {
   if(clickCount === leafCountL + leafCountR){
-    const finalDecison = document.getElementById("decisionWorld").textContent;
+    const finalDecison = document.getElementById("decisionWord").textContent;
     document.getElementById("modalContent").textContent = finalDecison;
     document.getElementById("modal").style.display = "block";
   }
