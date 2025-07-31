@@ -1,6 +1,8 @@
 let clickCount = 0;
+let leafCountL = 0;
+let leafCountR = 0;
 
-// 클릭 시 실행
+// 나뭇잎 클릭 시 실행
 function leafClick(event) {
   const leaf = event.target;
   if (leaf.classList.contains("clicked")) return;
@@ -12,6 +14,7 @@ function leafClick(event) {
   leaf.style.top = "400px";
 
   clickCount++;
+  popupFinalResult();
 }
 
 // 시작 버튼 클릭 시 실행
@@ -27,6 +30,17 @@ function updateDecisionText(text) {
   document.getElementById("decisionWord").textContent = text;
 }
 
+// 최종결과 모달
+function popupFinalResult() {
+  if(clickCount === leafCountL + leafCountR){
+    const finalDecison = document.getElementById("decisionWorld").textContent;
+    document.getElementById("modalContent").textContent = finalDecison;
+    document.getElementById("modal").style.display = "block";
+  }
+}
+
+
+
 // 트리 초기화
 function resetTree() {
   const tree = document.getElementById("treeContainer");
@@ -35,8 +49,8 @@ function resetTree() {
 
 // 나뭇잎 생성 전체
 function generateLeaves() {
-  const leafCountL = 3 + Math.floor(Math.random() * 5); // 3~7개
-  const leafCountR = 3 + Math.floor(Math.random() * 5);
+  leafCountL = 3 + Math.floor(Math.random() * 5); // 3~7개
+  leafCountR = 3 + Math.floor(Math.random() * 5);
 
   generateLeafSide(true, leafCountL);  // 왼쪽 나뭇잎
   generateLeafSide(false, leafCountR); // 오른쪽 나뭇잎
@@ -74,6 +88,13 @@ function createLeaf(isLeft) {
   leaf.onclick = leafClick;
   return leaf;
 }
+
+document.getElementById("startBtn").addEventListener("click", clickStartButton);
+
+// 모달 닫기
+document.getElementById("closeModalBtn").addEventListener("click", () => {
+  document.getElementById("modal").style.display = "none";
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("startBtn").addEventListener("click", clickStartButton);
