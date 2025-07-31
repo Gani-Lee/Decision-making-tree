@@ -33,13 +33,11 @@ function updateDecisionText(text) {
 // 최종결과 모달
 function popupFinalResult() {
   if(clickCount === leafCountL + leafCountR){
-    const finalDecison = document.getElementById("decisionWord").textContent;
+    const finalDecision = document.getElementById("decisionWord").textContent;
     document.getElementById("modalContent").textContent = finalDecison;
     document.getElementById("modal").style.display = "block";
   }
 }
-
-
 
 // 트리 초기화
 function resetTree() {
@@ -94,8 +92,4 @@ document.getElementById("startBtn").addEventListener("click", clickStartButton);
 // 모달 닫기
 document.getElementById("closeModalBtn").addEventListener("click", () => {
   document.getElementById("modal").style.display = "none";
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("startBtn").addEventListener("click", clickStartButton);
 });
